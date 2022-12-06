@@ -15,8 +15,7 @@
 
 ![daa-logo](res/daa.png)
 
- - [Counting Statements (+Asymptotic behavior)](modules/daa/counting-statements.md)
- - [Worst, Average and Best Case Analysis of Algorithms](modules/daa/worst-average-and-best-cases.md)
+ - [Counting Statements](modules/design-and-analysis-of-algorithms/counting-statements.md)
 
 ---
 
