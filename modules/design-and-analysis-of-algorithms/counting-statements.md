@@ -130,7 +130,7 @@ For example, look at the two arrays below:
 
 <div id="worst-case"></div>
 
-## Worst Case Approach
+## Worst Case example
 
 When analyzing an Algorithm, it is very common to consider the **worst case possible**.
 
