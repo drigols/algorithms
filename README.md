@@ -16,6 +16,7 @@
 ![daa-logo](res/daa.png)
 
  - [Counting Statements](modules/design-and-analysis-of-algorithms/counting-statements.md)
+ - [Asymptotic Analysis](modules/design-and-analysis-of-algorithms/asymptotic-analysis.md)
 
 ---
 
