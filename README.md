@@ -17,6 +17,7 @@
 
  - [Counting Statements](modules/design-and-analysis-of-algorithms/counting-statements.md)
  - [Asymptotic Analysis](modules/design-and-analysis-of-algorithms/asymptotic-analysis.md)
+ - [Asymptotic notations](modules/design-and-analysis-of-algorithms/asymptotic-notations.md)
 
 ---
 
