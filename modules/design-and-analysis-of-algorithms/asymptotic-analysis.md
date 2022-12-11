@@ -11,6 +11,11 @@
    - [Omega (Ω) Notation ( Best Case / Lower Bound )](#omega-notation)
    - [Theta (Θ) Notation ( Average Case / Average Bound )](#theta-notation)
  - **Cases (examples):**
+   - [Constant Time Complexity O(1)](#o1)
+   - [Linear Time Complexity O(n)](#on)
+   - [Quadratic Time Complexity O(n<sup>2</sup>)](#qtc)
+   - [Logarithmic Time Complexity O(Log n)](#ltc)
+   - [Logarithmic Time Complexity O(Log Log n):](#loglogn)
    - [Linear search algorithm](#case-lsa)
  - **Tips & Tricks:**
    - [Algorithms with same Asymptotic Notation for all the cases (worst, best, average)](#algo-same-an)
@@ -247,6 +252,264 @@ Note that the focus is always the largest term of the function.
 
 ![img](images/avg-case.png)
 
+
+---
+
+<div id="o1"></div>
+
+## Constant Time Complexity O(1)
+
+The **time complexity** of a function (or set of statements) is considered as **O(1)** if it doesn’t contain a **loop**, **recursion**, and **call to any other non-constant time function**.
+
+> i.e (ou seja). set of **non-recursive** and **non-loop** *statements*.
+
+For example, **swap() function** has **O(1)** time complexity:
+
+[swap.h](src/swap.h)  
+```cpp
+void swap(int& first, int& second); // Function prototype.
+```
+
+[swap.cpp](src/swap.cpp)  
+```cpp
+#include "swap.h"
+
+
+void swap(int& first, int& second)
+{
+    int temp = first;
+    first = second;
+    second = temp;
+}
+```
+
+[swap_main.cpp](src/swap_main.cpp)  
+```cpp
+#include <iostream>
+#include "swap.h"
+using namespace std;
+
+
+int main()
+{
+    int x, y;
+
+    cout << "Enter the first value: ";
+    cin >> x;
+
+    cout << "Enter the second value: ";
+    cin >> y;
+
+    // Call the swap() function.
+    swap(x, y);
+
+    cout << "After swapping " <<
+    "the first value is " << x <<
+    ", the second value is " << y << ".";
+
+
+    return 0;
+}
+```
+
+**COMPILATION AND RUN:**  
+```cpp
+g++ swap_main.cpp swap.cpp -o swap
+
+./swap.exe
+
+Enter the first value: 10
+Enter the second value: 20
+```
+
+**OUTPUT:**
+```cpp
+After swapping the first value is 20, the second value is 10.
+```
+
+**NOTE:**  
+A **loop** or **recursion** that **runs a constant number of times is also considered O(1)**. For example, the following loop (python) is **O(1)**:
+
+[constant_loop.py](src/constant_loop.py)  
+```python
+# Here c is a constant
+for i in range(1, c+1):
+    # some O(1) expressions
+
+    # This code is contributed by Pushpesh Raj.
+```
+
+---
+
+<div id="on"></div>
+
+## Linear Time Complexity O(n)
+
+> The **Time Complexity of a loop is considered as O(n)** if **the loop variables are incremented/decremented by a constant amount (valor)**.
+
+For example following functions have **O(n)** time complexity:
+
+**C++ Examples:**  
+```c
+// Here c is a positive integer constant
+for (int i = 1; i <= n; i += c) {
+    // some O(1) expressions
+}
+
+for (int i = n; i > 0; i -= c) {
+	  // some O(1) expressions
+}
+```
+
+**Python Examples:**  
+```python
+# Here c is a positive integer constant
+for i in range(1, n+1, c):
+	# some O(1) expressions
+
+for i in range(n, 0, -c):
+    # some O(1) expressions
+
+    # This code is contributed by Pushpesh Raj
+```
+
+---
+
+<div id="qtc"></div>
+
+## Quadratic Time Complexity O(n<sup>2</sup>)
+
+The **Time Complexity is quadratic **O(n<sup>2</sup>)**** when:
+
+ - **ENG notes:**
+   - Performance is **directly proportional to the squared size of the input data**.
+   - **As in nested loops it is equal to the number of times the innermost statement is executed**.
+ - **PT-BR notes:**
+   - Desempenho é diretamente proporcional ao tamanho ao quadrado dos dados de entrada.
+   - Pois em loops aninhados é igual ao número de vezes que a instrução mais interna é executada.
+
+For example, the following sample loops have **O(n<sup>2</sup>)** time complexity:
+
+**C++ Examples:**  
+```cpp
+for (int i = 1; i <= n; i += c) {
+    for (int j = 1; j <= n; j += c) {
+        // some O(1) expressions
+    }
+}
+
+for (int i = n; i > 0; i -= c) {
+    for (int j = i + 1; j <= n; j += c) {
+        // some O(1) expressions
+    }
+}
+```
+
+**Python Examples:**  
+```python
+for i in range(1, n+1, c):
+    for j in range(1, n+1, c):
+        # some O(1) expressions
+
+for i in range(n, 0, -c):
+    for j in range(i+1, n+1, c):
+        # some O(1) expressions
+```
+
+**NOTE:**  
+[Selection sort](https://www.geeksforgeeks.org/selection-sort/) and [Insertion Sort](https://www.geeksforgeeks.org/insertion-sort/) have **O(n<sup>2</sup>)** time complexity. 
+
+---
+
+<div id="ltc"></div>
+
+## Logarithmic Time Complexity O(Log n)
+
+ - The **time Complexity of a loop is considered as O(Log n)** if the **loop variables are divided/multiplied** by a **constant amount (valor)**.
+ - And also for **recursive calls in the recursive function**, the **Time Complexity is considered as O(Logn)**.
+
+**C++ Examples:**  
+```cpp
+// variables are divided/multiplied.
+for (int i = 1; i <= n; i *= c) {
+    // some O(1) expressions
+}
+
+
+// variables are divided/multiplied.
+for (int i = n; i > 0; i /= c) {
+    // some O(1) expressions
+}
+
+
+// Recursive function
+void recurse(n)
+{
+    if (n == 0)
+        return;
+    else {
+        // some O(1) expressions
+    }
+    recurse(n - 1);
+}
+```
+
+**Python Examples:**  
+```python
+i = 1
+# variables are divided/multiplied.
+while(i <= n):
+    # some O(1) expressions
+    i = i*c
+
+
+i = n
+# variables are divided/multiplied.
+while(i > 0):
+    # some O(1) expressions
+    i = i//c
+
+
+# Recursive function
+def recurse(n):
+    if(n == 0):
+		    return
+    else:
+        # some O(1) expressions
+    recurse(n-1)
+```
+
+**NOTE:**  
+[Binary Search(refer iterative implementation)](https://www.geeksforgeeks.org/binary-search/) has **O(Logn)** time complexity.
+
+---
+
+<div id="loglogn"></div>
+
+## Logarithmic Time Complexity O(Log Log n)
+
+The **Time Complexity of a loop is considered as O(Log Log n)** if **the loop variables are reduced/increased exponentially by a constant amount (valor)**.
+
+**C++ Example:**  
+```cpp
+// "i" variable is increased exponentially with pow() function.
+for (int i = 2; i <= n; i = pow(i, c)) {
+    // some O(1) expressions
+}
+```
+
+**Python Example:**  
+```python
+# "i" variable is increased exponentially (i**c).
+i = 2
+while(i <= n):
+    # some O(1) expressions
+    i = i**c
+```
+
+**See the post below to understand mathematical details:**  
+[Time Complexity of a Loop when Loop variable “Expands or Shrinks” exponentially](https://www.geeksforgeeks.org/time-complexity-loop-loop-variable-expands-shrinks-exponentially/)
+
 ---
 
 <div id="case-lsa"></div>
@@ -265,27 +528,26 @@ using namespace std;
 // otherwise return -1
 int search(int arr[], int n, int x)
 {
-	int i;
-	for (i = 0; i < n; i++) {
-		if (arr[i] == x)
-			return i;
-	}
-	return -1;
+    int i;
+    for (i = 0; i < n; i++) {
+        if (arr[i] == x)
+            return i;
+    }
+    return -1;
 }
 
 
 // Driver's Code
 int main()
 {
-	int arr[] = { 1, 10, 30, 15 };
-	int x = 30;
-	int n = sizeof(arr) / sizeof(arr[0]);
+    int arr[] = { 1, 10, 30, 15 };
+    int x = 30;
+    int n = sizeof(arr) / sizeof(arr[0]);
 
-	// Function call
-	cout << x << " is present at index "
-		<< search(arr, n, x);
+    // Function call
+    cout << x << " is present at index " << search(arr, n, x);
 
-	return 0;
+    return 0;
 }
 ```
 
@@ -344,9 +606,10 @@ For example, [Merge Sort](https://en.wikipedia.org/wiki/Merge_sort) does **Θ(n 
 ---
 
 **REFERENCES:**  
+[[ED] Aula 101 - Análise de Algoritmos - Comportamento Assintótico](https://www.youtube.com/watch?v=SClFMUpBiaw&list=PL8iN9FQ7_jt6buW7SBD3yzjIp8NnJYrZl&index=3)  
+[How to Analyse Loops for Complexity Analysis of Algorithms](https://www.geeksforgeeks.org/analysis-of-algorithms-set-4-analysis-of-loops/)  
 [Worst, Average and Best Case Analysis of Algorithms](https://www.geeksforgeeks.org/worst-average-and-best-case-analysis-of-algorithms/)  
-[[ED] Aula 101 - Análise de Algoritmos - Comportamento Assintótico](https://www.youtube.com/watch?v=SClFMUpBiaw&list=PL8iN9FQ7_jt6buW7SBD3yzjIp8NnJYrZl&index=3)
-[Time Complexity Analysis](https://log2base2.com/courses/time-complexity-analysis)
+[Time Complexity Analysis](https://log2base2.com/courses/time-complexity-analysis)  
 
 ---
 
