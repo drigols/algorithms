@@ -11,6 +11,11 @@
    - [Intro to Doubly Linked List](#intro-to-dll)
  - **Circular Linked List:**
    - [Intro to Circular Linked List](#intro-to-cll)
+ - **Tips & Tricks:**
+   - [Linked List Applications](#ll-applications)
+   - [Advantages & Disadvantages](#adv-disa)
+   - [Linked List vs. Array](#ll-vs-array)
+
 
 ---
 
@@ -229,10 +234,68 @@ A **Circular Linked List** can be either *Singly Linked* or *Doubly Linked*:
 
 ---
 
+<div id="ll-applications"></div>
+
+## Linked List Applications
+
+ - **Applications of Linked Lists:**
+   - Linked Lists are used to implement *stacks* and *queues*.
+   - It is used for the various representations of *trees* and *graphs*.
+   - It is used in *dynamic memory allocation* (linked list of free blocks).
+   - It is used for representing *sparse matrices*.
+   - It is used for the *manipulation of polynomials*.
+   - It is also used for performing *arithmetic operations on long integers*.
+   - It is used for *finding paths in networks*.
+ - **Applications of Linked Lists in real world:**
+   - The list of songs in the *music player are linked* to the *previous* and *next* songs.
+   - In a *web browser*, *previous* and *next web page URLs* are *linked* through the previous and next buttons.
+   - In *image viewer*, the *previous* and *next images* are *linked* with the help of the previous and next buttons.
+   - In *mobile phones*, we save the contacts of the people. The newly entered contact details will be placed at the correct alphabetical order. This can be achieved by linked list to set contact at correct alphabetical position.
+   - The *modifications that we make in documents* are actually created as *nodes* in *doubly linked list*. We can simply use the undo option by pressing Ctrl+Z to modify the contents. It is done by the functionality of linked list.
+
+---
+
+<div id="adv-disa"></div>
+
+## Advantages & Disadvantages
+
+ - **Advantages of Linked Lists:**
+   - *Insertion* and *deletion* in linked lists are *very efficient*.
+   - Linked list can be *expanded in constant time*.
+   - For implementation of *stacks* and *queues* and for representation of *trees* and *graphs*.
+   - Linked lists *are used for dynamic memory allocation* which means *effective memory* utilization hence, no memory wastage.
+ - **Disadvantages of Linked Lists:**
+   - Use of pointers is more in linked lists hence, complex and requires more memory.
+   - Searching an element is costly and requires *O(n)* time complexity.
+   - Traversing is more time consuming and reverse traversing is not possible in singly linked lists.
+   - Random access is not possible due to dynamic memory allocation.
+
+---
+
+<div id="ll-vs-array"></div>
+
+## Linked List vs. Array
+
+ - **Array:**
+   - **Arrays store elements in contiguous memory locations**, resulting in easily calculable addresses for the elements stored and this allows faster access to an element at a specific index.
+ - **Linked List:**
+   - Linked lists are less rigid in their storage structure and elements are **usually not stored in contiguous locations**, hence they need to be stored with additional tags giving a reference to the next element. 
+
+**NOTE:**  
+This difference in the data storage scheme decides which data structure would be more suitable for a given situation. 
+
+![img](images/arrays.png)  
+![img](images/intro-linked-list.png)  
+![img](images/arrays-vs-linkedinlist.png)  
+
+---
+
 **REFERENCES:**  
 [Types of Linked List - Singly linked, doubly linked and circular](https://www.programiz.com/dsa/linked-list-types)  
 [Linked list Data Structure](https://www.programiz.com/dsa/linked-list)  
 [What is Linked List](https://www.geeksforgeeks.org/what-is-linked-list//)  
+[Applications, Advantages and Disadvantages of Linked List](https://www.geeksforgeeks.org/applications-advantages-and-disadvantages-of-linked-list/)  
+[Linked List vs Array](https://www.geeksforgeeks.org/linked-list-vs-array/)  
 
 ---
 
